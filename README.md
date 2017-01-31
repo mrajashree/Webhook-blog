@@ -25,7 +25,7 @@ Click on `Create` once all fields are entered</br></br>
 ![Create](images/add_hook_3.png)
 
 The created webhook will now be listed on the webhooks page. The `Trigger URL` is what should be used for the actual execution of scale up and scale down. Next to it, there's also a field for options, that options such as include deleting and cloning a webhook</br></br>
-![Create](images/add_hook_3.png)
+![Create](images/options.png)
 
 ### Using the webhook
 The `Trigger URL` will execute the action for the driver. To use the trigger URL, you will need to do a POST to the specific URL. There is no authentication or body needed to POST to the URL. This URL consists of an API endpoint and a token. The token contains all the information of the created webhook, such as selected driver, service, action(up/down), amount that the service should be scaled by and so on. The API endpoint uses this token to make cattle API calls in order to complete the action provided in the created webhook.
