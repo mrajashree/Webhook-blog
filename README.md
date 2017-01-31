@@ -24,7 +24,7 @@ On this page, the fields to be entered are as follows</br>
 Click on `Create` once all fields are entered</br></br>
 ![Create](images/add_hook_3.png)
 
-The created webhook will now be listed on the webhooks page. The `Trigger URL` is what should be used for the actual execution of scale up and scale down. Next to it, there's also a field for options, that options such as include deleting and cloning a webhook</br></br>
+The created webhook will now be listed on the webhooks page. The `Trigger URL` is what should be used for the actual execution of scale up and scale down. Next to it, there's also a field for options, that includes options such as deleting and cloning a webhook</br></br>
 ![Create](images/options.png)
 
 ### Using the webhook
