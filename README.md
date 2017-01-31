@@ -7,6 +7,19 @@ Rancher has added a new feature in 1.4 for webhooks. Webhooks are a way of getti
 Navigate to **API -> Webhooks** in the UI. This is where all the webhooks you create for the selected environment will be listed under `Receiver Hooks`</br></br>
 ![Webhooks](images/webhooks.png)
 
-Click on `Add Receiver` to create the webhook. Enter all these fields for creating the webhook.</br></br>
+Click on `Add Receiver` to create the webhook. You will see all these fields to be entered for creating the webhook.</br></br>
 ![Create webhook](images/add_hook_1.png)
-On this page, the fields to be entered are
+On this page, the fields to be entered are as follows</br>
+- **Name**: Every webhook should be given a unique name so it can be easily identifed.
+- **Kind**: The `Kind` dropdown gives a list of all drivers available in webhook-service. Select a driver from this list. (Only `Scale a Service` is available for 1.4)
+- **Action**: This field lets specify the action specific to the driver. For the scaleService driver, the only two actions are `up`(increase the number of containers) and `down`(decrease the number of containers).
+
+The fields after this are specific to the scaleService driver
+- **Target Service**: Select the service to be scaled from this dropdown</br>
+![Select Service](images/add_hook_2.png)
+
+- **By**: The field `By` asks the user to enter the amount by which the selected service should be scaled.
+- **Minimum Scale** and **Maximum Scale**: Enter the minimum and maximum number of containers your service can be allowed to have. Scaling the service beyond these values using webhooks won't be allowed.
+
+Click on `Create` once all fields are entered
+![Create](images/add_hook_3.png)
