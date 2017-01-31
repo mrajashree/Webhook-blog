@@ -4,7 +4,7 @@ Lets use `addHost` as an example driver for going through the steps on adding cu
 
 **Package Model**
 - The webhook-service repository has a [model](https://github.com/rancher/webhook-service/tree/master/model) package with two files, `driver_model.go` and `framework_model.go`. 
- - In [driver_model.go](https://github.com/rancher/webhook-service/blob/master/model/driver_model.go), add a type struct for your new driver, in the same way as `scaleService` has been added. All fields in your custom driver that are necessary for the webhook should be added in your struct. The new struct according to our example should be named something like addHost. One more field called `Type` should be added in addition to your fields. You can add `Type` by adding this line to your struct: 
+ - In [driver_model.go](https://github.com/rancher/webhook-service/blob/master/model/driver_model.go), add a type for your new driver, in the same way as `scaleService` has been added. All fields in your custom driver that are necessary for the webhook should be added in your struct. The new struct according to our example should be named something like addHost. One more field called `Type` should be added in addition to your fields. You can add `Type` by adding this line to your struct: 
  ```
  Type  string `json:"type,omitempty" mapstructure:"type"`
  ```
