@@ -14,7 +14,7 @@ Lets use `addHost` as an example driver for going through the steps on adding cu
  ```
 
 **Package Driver**
-- The webhook-service repository has a [drivers](https://github.com/rancher/webhook-service/tree/master/drivers) package. You need to register the new driver in this package. For that, the file [framework.go]((https://github.com/rancher/webhook-service/blob/master/drivers/framework.go) needs to be modified. In this file, add your driver in the [RegisterDrivers](https://github.com/rancher/webhook-service/blob/master/drivers/framework.go#L22) functions, using this example line:
+- The webhook-service repository has a [drivers](https://github.com/rancher/webhook-service/tree/master/drivers) package. You need to register the new driver in this package. For that, the file [framework.go](https://github.com/rancher/webhook-service/blob/master/drivers/framework.go) needs to be modified. In this file, add your driver in the [RegisterDrivers](https://github.com/rancher/webhook-service/blob/master/drivers/framework.go#L22) functions, using this example line:
 ```
 Drivers["addHost"] = &AddHostDriver{}
 ```
