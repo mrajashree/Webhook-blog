@@ -14,13 +14,13 @@ On this page, the fields to be entered are as follows</br>
 - **Name**: Every webhook should be given a unique name so it can be easily identifed.
 - **Kind**: The `Kind` dropdown gives a list of all drivers available in webhook-service. Select a driver from this list. (Only `Scale a Service` is available for 1.4)
 - **Action**: This field lets specify the action specific to the driver. For the scaleService driver, the only two actions are `up`(increase the number of containers) and `down`(decrease the number of containers).
-
-The fields after this are specific to the scaleService driver
-- **Target Service**: Select the service to be scaled from this dropdown</br></br>
+- The fields after this are specific to the scaleService driver
+ - **Target Service**: Select the service to be scaled from this dropdown</br></br>
 ![Select Service](images/add_hook_2.png)
 
-- **By**: The field `By` asks the user to enter the amount by which the selected service should be scaled.
-- **Minimum Scale** and **Maximum Scale**: Enter the minimum and maximum number of containers your service can be allowed to have. Scaling the service beyond these values using webhooks won't be allowed.
+ - **By**: The field `By` asks the user to enter the amount by which the selected service should be scaled.
+ - **Minimum Scale** and **Maximum Scale**: Enter the minimum and maximum number of containers your service can be allowed to have. Scaling the service beyond these values using webhooks won't be allowed.
 
 Click on `Create` once all fields are entered</br></br>
 ![Create](images/add_hook_3.png)
+
