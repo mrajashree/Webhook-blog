@@ -44,4 +44,4 @@ Drivers["addHost"] = &AddHostDriver{}
 }
  ```
  - `GetDriverConfigResource` just returns the driver type when requested.
- - `CustomizeSchema` is to set default values or change the type of some fields. You can leave it blank for now and just add a line `return schema` to it.
+ - `CustomizeSchema` is used to set default values or change the type of some fields. You can leave it blank for now and just add a line `return schema` to it.
