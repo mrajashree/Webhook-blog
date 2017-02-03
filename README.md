@@ -1,7 +1,7 @@
 # Webhooks
 
 ## Webhook-service
-Rancher has added a new feature in 1.4 for webhooks. Webhooks provide the application with real-time data. So your application doesn't have to keep polling for a particular event to occur. The webhook will notify your application once the event occurs and an action corresponding to the webhook will be executed. We have implemented webhooks with our new microservice, called webhook-service. Webhook-service has drivers defined for actions to be taken in case a particular event occurs. I will explain this using our current driver, scaleService. The driver scaleService is for scaling up and down of a service by a given number of containers.
+Rancher has added a new feature in 1.4 for webhooks. Webhooks provide the application with real-time data. Usually using APIs you need to poll for the data very frequenty. If you want to take an action in response to some resource change, you will have to keep checking the resource for changes. Webhooks on the other hand provide you with a way of taking the required action as soon as the resouce undergoes changes, without requiring you to keep polling. You can configure webhooks in a way that, once your application sees an event, it sends HTTP Post to your webhook. We have implemented webhooks with our new microservice, called webhook-service. Webhook-service has drivers defined for actions to be taken in case a particular event occurs. I will explain this using our current driver, scaleService. The driver scaleService is for scaling up and down of a service by a given number of containers.
 
 ### Creating a webhook
 Navigate to **API -> Webhooks** in the UI. This is where all the webhooks you create for the selected environment will be listed under `Receiver Hooks`</br></br>
