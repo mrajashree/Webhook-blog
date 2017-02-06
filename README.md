@@ -2,7 +2,7 @@
 
 ## Overview
 Rancher has added a new feature in 1.4 for webhooks. A key concept for implementing webhooks is 'Receiver'. A receiver lets you register a webhook. A receiver hook in Rancher registers a webhook and provides a URL, which when hit can trigger an action within Rancher. This action is selected while adding the receiver hook.
-We have implemented webhooks with our new microservice, called webhook-service. I will explain the feature using our current driver, scaleService. The driver scaleService allows users to create a receiver hook that can scale a service up or down.  A classic use case for this is integration with a monitoring system that watches load balancer traffic and calls this eceiver hook when response times or requests per second reach a certain threshold.  I will go through the steps of creating the receiver hooks.
+We have implemented webhooks with our new microservice, called webhook-service. I will explain the feature using our current driver, scaleService. The driver scaleService allows users to create a receiver hook that can scale a service up or down.  A classic use case for this is integration with a monitoring system that watches load balancer traffic and calls this receiver hook when response times or requests per second reach a certain threshold.  I will go through the steps of creating the receiver hooks.
 ### Adding a Receiver hook
 Navigate to **API -> Webhooks** in the UI. This is where all the receiver hooks you create for the selected environment will be listed under `Receiver Hooks`</br></br>
 ![Webhooks](images/webhooks.png)
