@@ -1,7 +1,13 @@
-# Webhooks
+# Webhooks [comment: the UI calls them Receiver hooks, use the same term throughout this article]
 
-## Webhook-service
-Rancher has added a new feature in 1.4 for webhooks. Webhooks provide the application with real-time data. Usually using APIs you need to poll for the data very frequenty. If you want to take an action in response to some resource change, you will have to keep checking the resource for changes. Webhooks on the other hand provide you with a way of taking the required action as soon as the resouce undergoes changes, without requiring you to keep polling. You can configure webhooks in a way that, once your application sees an event, it sends HTTP Post to your webhook. This is what makes webhooks efficient for the application providing it and also for the one consuming it. We have implemented webhooks with our new microservice, called webhook-service. Webhook-service has drivers defined for actions to be taken in case a particular event occurs. I will explain this using our current driver, scaleService. The driver scaleService is for scaling up and down of a service by a given number of containers. We provide this webhook for a service selected by the user. In order to consume it, the created webhook has a url, which accepts HTTP Post. I will go through the steps of creating the webhook.
+## Overview
+Rancher has added a new feature in 1.4 for webhooks. Webhooks provide the application with real-time data. Usually using APIs you need to poll for the data very frequenty. If you want to take an action in response to some resource change, you will have to keep checking the resource for changes. Webhooks on the other hand provide you with a way of taking the required action as soon as the resouce undergoes changes, without requiring you to keep polling. You can configure webhooks in a way that, once your application sees an event, it sends HTTP Post to your webhook. This is what makes webhooks efficient for the application providing it and also for the one consuming it. 
+[Comment: everything above here may confuse users because it is not really what our webhook feature does. There is another feature for "outbound" webhooks where Rancher would call 3rd party webhooks. Users reading this opening would likely think you were talking about that instead. I suggest dropping most of what is above, except for the opening sentence. If you can add a short description specifically for "Receiver hooks", that might work here.]
+
+We have implemented webhooks with our new microservice, called webhook-service. Webhook-service has drivers defined for actions to be taken when a webhook is url is posted to. [Comment: I would just delete these sentences. ]
+
+I will explain the feature using our current driver, scaleService. The driver scaleService allows users to create a webhook that can scale a service up or down.  A classic use case for such a webhook is integration with a monitoring system that watches load balancer traffic and calls this webhook when response times or request per second reach a certain threshold.  I will go through the steps of creating the webhook.
+
 
 ### Creating a webhook
 Navigate to **API -> Webhooks** in the UI. This is where all the webhooks you create for the selected environment will be listed under `Receiver Hooks`</br></br>
